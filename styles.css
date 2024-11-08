@@ -1,0 +1,659 @@
+body {
+    background-image: url(Imagenes/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 16px; /* tamaño base */
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menu {
+    list-style-type: none;   /*Quita los puntos de la lista*/
+    padding: 0;
+    width: 300px;            /*Ancho del menu*/
+    background-color: #293362;
+    margin: 0;
+    display: flex;
+    flex-direction: column;  /*Organiza los elementos del menú en columna*/
+    justify-content: center; /*Centra los elementos verticalmente*/
+    position: fixed;         /*Hace que el menú sea fijo en la pantalla*/
+    top: 0;
+    left: 0;
+    height: 100vh;           /*Ocupa todo el alto de la pantalla*/
+}
+
+.menu li a:hover {
+    font-size: 20px;
+}
+
+.menu li {
+    margin: 0;
+}
+
+/*Estilos del contenedor de la imagen*/
+.foto {
+    width: 100%;             /*Asegura que el contenedor de la imagen ocupe todo el ancho del menú*/
+    display: flex;
+    justify-content: center;  /*Centra la imagen horizontalmente*/
+    align-items: center;      /*Centra la imagen verticalmente*/
+    padding: 20px 0;         /*Añade espacio alrededor de la imagen*/
+}
+
+.mifoto {
+    width: 150px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    border-radius: 50%;     /*Hace que la imagen sea circular*/
+}
+
+/*Enlaces del menú*/
+.menu li a {
+    display: block;
+    color: #C8CFDE;
+    padding: 15px 0;                 /*Ajusta el padding para más espacio entre los enlaces*/
+    text-decoration: none;
+    text-align: center;              /*Alinea el texto al centro*/
+    background-color: transparent;   /*Elimina el fondo*/
+    border: none;                    /*Elimina el borde*/
+    font-size: 16px;
+    transition: font-size 0.5s ease, color 0.5s ease; /*Añadir transición suave*/
+}
+
+
+/*Estilo para el enlace activo*/
+.menu li a.active {
+    color: #08FFDA; /*Cambio el color del enlace activo*/
+    font-size: 20px
+}
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+/*Estilos para el contenido de PERFIL*/
+.nombreCompleto {
+    position: fixed;         /*Permite posicionar el contenido en la pantalla*/
+    top: 160px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);   /*Espacio desde la izquierda (300px del menú + adicional)*/
+    font-size: 60px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+}
+
+.nombre {
+    color: #08FFDA;    /*Color del nombre*/
+}
+
+.apellido {
+    color: #FF6347;    /*Color del apellido*/
+}
+
+.grado {
+    position: absolute;         /*Permite posicionar el contenido en la pantalla*/
+    top: 230px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 350px);  /*Espacio desde la izquierda (300px del menú + adicional)*/
+    font-size: 25px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #0099FF;
+}
+
+.descripcion {
+    position: absolute;         /*Permite posicionar el contenido en la pantalla*/
+    top: 320px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);  /*Espacio desde la izquierda (300px del menú + adicional)*/
+    right: 40px;
+    font-size: 25px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #ACD3FF;
+}
+
+.correo {
+    position: absolute;         /*Permite posicionar el contenido en la pantalla*/
+    top: 450px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);   /*Espacio desde la izquierda (300px del menú + adicional)*/
+    font-size: 20px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+}
+
+.correo1 {
+    color: #ACD3FF;    /*Color del nombre*/
+}
+
+.correo2 {
+    color: #08FFDA;    /*Color del apellido*/
+}
+
+/*Estilos para el contenedor del CV*/
+.cv-contenedor {
+    width: 80%;         /*Ajusta el ancho del PDF incrustado*/
+    margin: 20px auto;  /*Centra el PDF y añade un margen*/
+    border: 1px solid #ddd; /*Opcional: Añadir un borde*/
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /*Añade una sombra*/
+}
+
+/*Botón de descarga del CV*/
+.btn_descargar_cv {
+    position: absolute;
+    margin-top: 100px;             /*Margen superior*/
+    left: calc(300px + 120px);
+    background-color: #08FFDA;  /*Color de fondo del boton*/
+    color: black;               /*Color del texto*/
+    padding: 10px 25px;           /*Tamaño del boton*/
+    text-align: center;           /*Centrar el texto*/
+    text-decoration: none;        /*Quitar el subrayado*/
+    font-size: 22px;              /*Tamaño de la fuente*/
+    font-weight: 530;
+    border-radius: 16px;           /*Bordes redondeados*/
+    transition: background-color 0.3s ease; /*Efecto de transici0n*/
+}
+
+
+/*Efecto de parpadeo/pulsación al pasar el mouse*/
+.btn_descargar_cv:hover {
+    border: 3.5px solid #2359ff; /*Aparece un borde de color al hacer hover*/
+    animation: pulsar 1.2s infinite; /*Aplica la animación de pulsacion*/
+}
+
+/*Definición de la animacion de pulsacion*/
+@keyframes pulsar {
+    0% { transform: scale(1);}    /*Tamaño normal*/
+    50% { transform: scale(1.05);}  /*Aumenta el tamaño ligeramente*/
+    100% { transform: scale(1);}    /*Vuelve al tamaño normal*/
+}
+
+/*Estilo de icons de contacto*/
+.linkedIn_icon {
+    width: 50px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 200px;
+    left: calc(300px + 140px);
+}
+
+.instagram_icon {
+    width: 50px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 200px;
+    left: calc(300px + 140px + 50px + 40px);   /*Calcula distancia (menu + inicio de iconos + icono anterior + margen)*/
+}
+
+.whatsapp_icon {
+    width: 50px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 200px;
+    left: calc(300px + 230px + 50px + 40px);   /*Calcula distancia (menu + inicio de iconos + icono anterior + margen)*/
+}
+
+.outlook_icon {
+    width: 50px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 200px;
+    left: calc(300px + 320px + 50px + 40px);   /*Calcula distancia (menu + inicio de iconos + icono anterior + margen)*/
+}
+
+/*Animaciones de iconos*/
+.linkedIn_icon:hover {
+    width: 60px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;
+    margin-top: 195px;
+    left: calc(300px + 135px);
+}
+
+.instagram_icon:hover {
+    width: 60px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;
+    margin-top: 195px;
+    left: calc(300px + 225px);
+}
+
+.whatsapp_icon:hover {
+    width: 60px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;
+    margin-top: 195px;
+    left: calc(300px + 315px);
+}
+
+.outlook_icon:hover {
+    width: 60px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;
+    margin-top: 195px;
+    left: calc(300px + 405px);
+}
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+/*Estilos para el contenido de SOBRE MÍ*/
+.sobre_mi {
+    position: absolute;         /*Permite posicionar el contenido en la pantalla*/
+    top: 160px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);   /*Espacio desde la izquierda (300px del menú + adicional)*/
+    font-size: 60px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #08FFDA;
+}
+
+.parrafo1 {
+    position: absolute;
+    top: 300px;
+    left: calc(300px + 80px);
+    right: 40px;
+    font-size: 25px;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.parrafo2 {
+    position: absolute;
+    top: 400px;
+    left: calc(300px + 80px);
+    right: 170px;
+    font-size: 25px;
+    margin: 0;
+}
+.parrafo2_1 {
+    color: #08FFDA;
+}
+.parrafo2_2 {
+    color: #FFFFFF;
+}
+
+.parrafo3 {
+    position: absolute;
+    top: 600px;
+    left: calc(300px + 80px);
+    right: 170px;
+    font-size: 25px;
+    margin: 0;
+    color: #cdc5c5;
+}
+
+.outlook_icon2 {
+    width: 40px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 165px;
+    left: 890px;
+}
+.outlook_icon2:hover {
+    width: 50px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;
+    margin-top: 160px;
+    left: 885px;
+}
+
+.whatsapp_icon2 {
+    width: 40px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 165px;
+    left: 960px;
+}
+.whatsapp_icon2:hover {
+    width: 50px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;
+    margin-top: 160px;
+    left: 955px;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+/*Estilos para el contenido de EXPERIENCIAS*/
+.experiencias {
+    position: absolute;         /*Permite posicionar el contenido en la pantalla*/
+    top: 160px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);   /*Espacio desde la izquierda (300px del menú + adicional)*/
+    font-size: 60px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #08FFDA;
+}
+
+/*Estilos para exp1*/
+.proyecto1 {
+    position: absolute;
+    top: 280px;
+    left: calc(300px + 80px);
+    font-size: 25px;
+    margin: 0;
+    color: #77FCFC;
+}
+.empresa1 {
+    position: absolute;
+    top: 310px;
+    left: calc(300px + 210px);
+    font-size: 25px;
+    margin: 0;
+    color: #FFFFFF;
+}
+.fecha1 {
+    position: absolute;
+    top: 340px;
+    left: calc(300px + 320px);
+    font-size: 25px;
+    margin: 0;
+    color: #00FF3C;
+}
+
+/*Estilos para exp2*/
+.proyecto2 {
+    position: absolute;
+    top: 400px;
+    left: calc(300px + 80px);
+    font-size: 25px;
+    margin: 0;
+    color: #77FCFC;
+}
+.empresa2 {
+    position: absolute;
+    top: 430px;
+    left: calc(300px + 210px);
+    font-size: 25px;
+    margin: 0;
+    color: #FFFFFF;
+}
+.fecha2 {
+    position: absolute;
+    top: 460px;
+    left: calc(300px + 320px);
+    font-size: 25px;
+    margin: 0;
+    color: #00FF3C;
+}
+
+/*Estilos para exp3*/
+.proyecto3 {
+    position: absolute;
+    top: 520px;
+    left: calc(300px + 80px);
+    font-size: 25px;
+    margin: 0;
+    color: #77FCFC;
+}
+.empresa3 {
+    position: absolute;
+    top: 550px;
+    left: calc(300px + 210px);
+    font-size: 25px;
+    margin: 0;
+    color: #FFFFFF;
+}
+.fecha3 {
+    position: absolute;
+    top: 580px;
+    left: calc(300px + 320px);
+    font-size: 25px;
+    margin: 0;
+    color: #00FF3C;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+/*Estilos para el contenido de EDUCACION*/
+.educacion {
+    position: fixed;         /*Permite posicionar el contenido en la pantalla*/
+    top: 160px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);   /*Espacio desde la izquierda (300px del menú + adicional)*/
+    font-size: 60px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #08FFDA;
+}
+
+.educacion-grid {
+    margin: 0;                              /*Centra la cuadricula*/
+    top: 250px;
+    margin-left: -90px;
+    display: grid;                          /*Usar grid para la cuadricula*/
+    grid-template-columns: repeat(2, 1fr);  /*2 columnas*/
+    grid-gap: 10px;                         /*Espacio entre las celdas*/
+    position: fixed;
+}
+
+.bloque {
+    background: rgba(255, 255, 255, 0.1);           /*Fondo semi-transparente*/
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);      /*Sombra para el bloque*/
+    transition: transform 0.3s, background 0.3s;      /*Transiciones suaves*/
+    width: 380px;
+    height: 155px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bloque:hover {
+    transform: translateY(-5px);            /*Eleva el bloque al pasar el mouse*/
+    background: rgba(255, 255, 255, 0.3); /*Cambia el fondo al pasar el mouse*/
+}
+
+.bloque_mayor {
+    background: rgba(255, 255, 255, 0.1);           /*Fondo semi-transparente*/
+    padding: 15px;                                    /*Espacio interior*/
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);      /*Sombra para el bloque*/
+    transition: transform 0.3s, background 0.3s;      /*Transiciones suaves*/
+    width: 820px;
+    height: 155px;
+    top: 601px;
+    left: calc(300px + 80px);
+    position: fixed;
+}
+
+.bloque_mayor:hover {
+    transform: translateY(-5px);            /*Eleva el bloque al pasar el mouse*/
+    background: rgba(255, 255, 255, 0.3); /*Cambia el fondo al pasar el mouse*/
+}
+
+.educacion-grid-full h3 {
+    color: #08FFDA;
+    font-size: 18px;
+}
+
+.educacion-grid h3 {
+    color: #08FFDA;
+    font-size: 18px;
+}
+
+.institucion {
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.fecha {
+    color: #00FF3C;
+    font-size: 15px;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+/*Estilos para el contenido de SKILLS*/
+.skills {
+    position: absolute;         /*Permite posicionar el contenido en la pantalla*/
+    top: 160px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);   /*Espacio desde la izquierda (300px del menú + adicional)*/
+    font-size: 60px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #08FFDA;
+}
+
+.lenguajes {
+    position: absolute;         /*Permite posicionar el contenido en la pantalla*/
+    top: 260px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);  /*Espacio desde la izquierda (300px del menú + adicional)*/
+    right: 40px;
+    font-size: 30px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #ACD3FF;
+}
+
+.C_icon {
+    width: 120px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: -150px;
+    left: calc(300px + 80px);
+}
+
+.JAVA_icon {
+    width: 120px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: -150px;
+    left: calc(300px + 80px + 120px + 20px);
+}
+
+.HTML_icon {
+    width: 120px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: -150px;
+    left: calc(300px + 80px + 260px + 20px);
+}
+
+.CSS_icon {
+    width: 120px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: -150px;
+    left: calc(300px + 80px + 400px + 20px);
+}
+
+.QML_icon {
+    width: 120px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: -150px;
+    left: calc(300px + 80px + 540px + 20px);
+}
+
+.sofyherr {
+    position: absolute;         /*Permite posicionar el contenido en la pantalla*/
+    top: 440px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);  /*Espacio desde la izquierda (300px del menú + adicional)*/
+    right: 40px;
+    font-size: 30px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #ACD3FF;
+}
+
+.CATIA_icon {
+    width: 120px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 200px;
+    left: calc(300px + 80px);
+}
+
+.Proteus_icon {
+    width: 120px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 200px;
+    left: calc(300px + 80px + 120px + 20px);
+}
+
+.MPLAB_icon {
+    width: 120px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 200px;
+    left: calc(300px + 80px + 260px + 20px);
+}
+
+.QT_icon {
+    width: 162px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 198px;
+    left: calc(300px + 80px + 400px + 20px);
+}
+
+.VISUAL_icon {
+    width: 212px;           /*Ajusta el tamaño de la imagen*/
+    height: auto;           /*Mantiene las proporciones de la imagen*/
+    position: absolute;
+    margin-top: 200px;
+    left: calc(300px + 80px + 580px + 20px);
+}
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+/*Estilos para el contenido de CONTACTO*/
+.contacto {
+    position: fixed;         /*Permite posicionar el contenido en la pantalla*/
+    top: 160px;                 /*Ajusta el espacio desde la parte superior*/
+    left: calc(300px + 80px);   /*Espacio desde la izquierda (300px del menú + adicional)*/
+    font-size: 60px;            /*Tamaño de la fuente*/
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    color: #08FFDA;
+}
+
+.contenedor {
+    display: flex; /* Usar flexbox para alinear los elementos en una fila */
+    justify-content: space-between; /* Espacia los bloques a los lados */
+    max-width: 1800px; /* Ancho máximo para el contenedor */
+    margin-left: 140px;
+    margin-top: 200px;
+    gap: 35px; /* Espacio entre los bloques */
+}
+
+.infoCliente, .infoProyecto {
+    color: #3dcdf1;
+    max-width: 500px;                /* Ancho máximo del formulario */
+    padding: 20px;                   /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.099);         /* Color de fondo del formulario */
+    border-radius: 15px;              /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.405);  /* Sombra suave */
+}
+
+.infoCliente input, .infoProyecto input, .infoProyecto textarea, .infoProyecto select {
+    width: 100%;
+    border: 2px solid #7da9fc;
+    border-width: 2px;
+    border-radius: 18px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/*Estilo inicial transparente*/
+input, select, textarea {
+    background-color: transparent;
+    border: 1px solid #0957ff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;          /*Elimina el contorno predeterminado del navegador*/
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo al hacer clic (foco) */
+input:focus, select:focus, textarea:focus {
+    background-color: #7bb8ee; /* Color de fondo al hacer clic (puedes cambiarlo) */
+    border: 1px solid #ffffff; /* Cambia el color del borde al hacer clic */
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    font-size: 20px;
+    background-color: #28a745;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+    animation: pulsar 1.4s infinite;
+}
+
+input[type="submit"]:active {
+    background-color: #083d0a;
+    transform: scale(0.95);
+}
