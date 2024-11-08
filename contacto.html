@@ -40,8 +40,21 @@
                 <label for="empresa">Nombre de la empresa:</label>
                 <input type="text" name="empresa" id="" placeholder="Esciba el nombre la empresa">
                 <br><br>
+                <label for="ubicacion">Pais: </label>
+                <select name="categoria" id="categoria" onchange="actualizarSubcategoria()">
+                <option value="">--Seleccione su pais--</option>
+                <option value="mexico">México</option>
+                <option value="estadosUnidos">Estados Unidos</option>
+                <option value="italia">Italia</option>
+                <option value="colombia">Colombia</option>
+            </select>
+            <br><br>
+            <label for="subcategoria">Ciudad</label>
+            <select name="subcategoria" id="subcategoria">
+                <option value="">--Seleccione su ciudad--</option>
+            </select>
+            <br><br>
             </div>
-        
             <!-- Contenedor de Información del Proyecto -->
             <div class="infoProyecto">
                 <h2>Información del Proyecto</h2><br>
