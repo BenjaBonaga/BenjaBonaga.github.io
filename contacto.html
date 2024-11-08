@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menu de navegación -->
+    <nav>
+        <ul class="menu">
+            <div class="foto">
+                <img src="Imagenes/Mi_foto.png" alt="fotop" class="mifoto">
+            </div>
+            <li><a href="index.html">PERFIL</a></li>
+            <li><a href="sobre_mi.html">SOBRE MÍ</a></li>
+            <li><a href="experiencias.html">EXPERIENCIAS</a></li>
+            <li><a href="eduacion.html">EDUCACIÓN</a></li>
+            <li><a href="skills.html">SKILLS</a></li>
+            <li><a href="contacto.html" class="active">CONTACTO (FORM)</a></li>
+        </ul>
+    </nav>
+    <!--        Contenido       -->
+    <h1 class="contacto">CONSULTA TU PROYECTO</h1>
+    <form action="/submit" method="POST" class="formulario-contacto">
+        <div class="contenedor">
+            <!-- Contenedor de Información del Cliente -->
+            <div class="infoCliente">
+                <h2>Información del Cliente</h2><br>
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" name="nombre" id="" placeholder="Escribe tu nombre">
+                <br><br>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" name="email" id="" placeholder="Escribe tu email">
+                <br><br>
+                <label for="telefono">Telefono: </label>
+                <input type="tel" name="telefono" id="" placeholder="+52 123 4567 890">
+                <br><br>
+                <label for="empresa">Nombre de la empresa:</label>
+                <input type="text" name="empresa" id="" placeholder="Esciba el nombre la empresa">
+                <br><br>
+            </div>
+        
+            <!-- Contenedor de Información del Proyecto -->
+            <div class="infoProyecto">
+                <h2>Información del Proyecto</h2><br>
+                <label for="descripcion-proyecto">Descripción del proyecto:</label>
+                <textarea name="descripcion-proyecto" id="" placeholder="Describe las necesidad de tu proyecto"></textarea>
+                <br><br>
+                <label for="objetivo-software">Objetivo del software:</label>
+                <select id="tipo-software" name="tipo-software">
+                    <option value="">--Seleccione su tipo de software--</option>
+                    <option value="web">Aplicación web</option>
+                    <option value="movil">Aplicación móvil</option>
+                    <option value="escritorio">Software de escritorio</option>
+                </select>
+                <br><br>
+                <label for="fecha-limite">Fecha límite de entrega:</label>
+                <input type="date" name="fecha-limite" id="">
+                <br><br>
+                <label for="presupuesto">Rango de presupuesto:</label>
+                <input type="text" name="presupuesto" id="" placeholder="Coloque un rango de presupuesto">
+                <br><br>
+                <label for="comentarios">Comentarios adicionales:</label>
+                <textarea name="comentarios" id="" placeholder="Coloque comentarios adicionales si lo desea"></textarea>
+                <input type="submit" value="Enviar">
+            </div>
+        </div>
+    </form>
+          
+</body>
+</html>
